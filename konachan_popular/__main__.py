@@ -41,15 +41,15 @@ def parse_arguments() -> argparse.Namespace:
         "-t",
         "--token",
         help="Telegram bot API token",
-        required=os.environ.get("TELOXIDE_TOKEN") is None,
-        default=os.environ.get("TELOXIDE_TOKEN"),
+        required=os.environ.get("TELEGRAM_BOT_TOKEN") is None,
+        default=os.environ.get("TELEGRAM_BOT_TOKEN"),
     )
     parser.add_argument(
         "-c",
         "--chat-id",
         help="ID of the chat to send messages to",
-        required=os.environ.get("TELOXIDE_CHAT_ID") is None,
-        default=os.environ.get("TELOXIDE_CHAT_ID"),
+        required=os.environ.get("TELEGRAM_CHAT_ID") is None,
+        default=os.environ.get("TELEGRAM_CHAT_ID"),
     )
     return parser.parse_args()
 
