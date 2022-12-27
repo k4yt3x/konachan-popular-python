@@ -71,8 +71,7 @@ class KonachanPopular:
         send the popular posts in the past 24 hours into the chat
 
         """
-        date = datetime.utcnow().strftime("%B %-d, %Y")
-        logger.info(f"retrieving posts for {date}")
+        logger.info(f"retrieving posts for {datetime.utcnow().strftime('%B %-d, %Y')}")
 
         # all of the InputMediaPhoto objects to send
         posts: List[InputMediaPhoto] = []
@@ -92,9 +91,6 @@ class KonachanPopular:
                     posts.append(InputMediaPhoto(post["sample_url"]))
 
                 # otherwise skip this post as it is too big
-
-        # send today's date
-        await self.bot.send_message(self.chat_id, date)
 
         # send posts in groups of 10 (max number of images per media group)
         for group in groups(posts, 10):

@@ -1,5 +1,5 @@
 [project]
-name = "konachan-popular-python"
+name = "konachan-popular"
 description = "Backend for the Telegram channel @KonachanPopular"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -9,6 +9,8 @@ keywords = ["telegram", "konachan"]
 authors = [{ name = "K4YT3X", email = "i@k4yt3x.com" }]
 dependencies = [
     "python-telegram-bot[rate-limiter]>=20.0b0",
+    "loguru>=0.6.0",
+    "requests>=2.28.1",
 ]
 dynamic = ["version"]
 
